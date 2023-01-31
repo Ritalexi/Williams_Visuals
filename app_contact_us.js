@@ -1,11 +1,9 @@
 const loader = document.querySelector("#preloader");
 document.querySelector("main").style.display = "none";
-document.querySelector("footer").style.display = "none";
 loader.classList.add("preloader");
 window.addEventListener("load", () => {
     setTimeout(() => {
         loader.classList.remove("preloader");
-        document.querySelector("footer").style.display = "block";
         document.querySelector("main").style.display = "block";
     }, 2000);
 });
@@ -28,17 +26,7 @@ toogleBtn.addEventListener('click', () => {
     nav.style.backgroundColor = "#cce6f1";
 })
 
-var count = 0
-blueButton.addEventListener('click', () => {
-    if (count == 0){
-        blueButton.style.backgroundColor = "#2B97C6";
-        count = 1
-    }
-    else{
-        blueButton.style.backgroundColor = "#006C9B";
-        count = 0
-    }
-})
+
 
 const navLists = document.querySelectorAll(".nav_list li a"); 
     navLists[0].addEventListener('click', () =>{
@@ -77,24 +65,5 @@ navLists[4].addEventListener('click', () =>{
     navLists[0].classList.remove("first-child")
 })
 
-const emailMessage = document.querySelector('.error-message');
-const email = document.querySelector('#email');
-const emailSubmit = document.querySelector('.email_submit');
 
-emailSubmit.addEventListener('click', () => {
-    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(email.value == "" || email.value == "null"){
-emailMessage.innerHTML = "Please enter valid email address.";
-emailMessage.style.display = "block";
-email.style.borderColor = "#B01A1A";
-    }
-    if(!email.value.match(mailformat)){
-        emailMessage.innerHTML = "Please enter valid email address.";
-        emailMessage.style.display = "block";
-        email.style.borderColor = "#B01A1A";
-    }else{
-        emailMessage.innerHTML = "";
-        emailMessage.style.display = "none";
-        email.style.borderColor = "#8A8B8B";
-    }
-})
+
